@@ -8,7 +8,7 @@ const musicaDAO = require('./karaoke/DAO/MusicaDAO');
 
 /* EXEMPLOS de uso do DAO
 
-//consultar e obter uma musica
+//consultar ef obter uma musica
 musicaDAO.inserir('Sinais de Fogo', 'Preta Gil' );
 const minhaMusica = musicaDAO.buscarPorId(0);
 musicaDAO.adicionarPartes(0, new Parte('Quando você me vê...', 1100, 'parte1'));
@@ -34,6 +34,10 @@ const app = express();
 
 // 3. Configurar middlewares (pré-processamento)
 app.use(express.json());
+
+
+// Serve os arquivos da pasta public/ (index.html, estilo.css, player.j
+app.use(express.static('public'));
 
 // 4. Definir rotas (os "balcões de atendimento")
 app.get('/', (req, res) => {

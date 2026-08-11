@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #121212;
+    color: #eee;
+    min-height: 100vh;
+}
+
+header {
+    padding: 16px 24px;
+    background: #1db95422;
+    border-bottom: 2px solid #1db954;
+}
+
+main {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    align-items: flex-start;
+}
+
+#playlist {
+    width: 280px;
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+#playlist h2 {
+    font-size: 1rem;
+    color: #1db954;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#playlist li {
+    list-style: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#playlist li:hover {
+    background: #1db95433;
+}
+
+#palco {
+    flex: 1;
+    text-align: center;
+    padding: 40px 20px;
+    background: #1e1e1e;
+    border-radius: 12px;
+}
+
+#artista {
+    color: #aaa;
+    margin-top: 4px;
+}
+
+#tag {
+    margin-top: 24px;
+    color: #1db954;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+#letra {
+    font-size: 1.6rem;
+    margin: 16px 0;
+    min-height: 4.5rem;
+    /* as letras vêm com \n — pre-line transforma em quebra de linha real */
+    white-space: pre-line;
+}
+
+#contador {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+#btnTocar {
+    font-size: 1.2rem;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 24px;
+    background: #1db954;
+    color: #000;
+    cursor: pointer;
+}
+
+#btnTocar:disabled {
+    background: #555;
+    color: #999;
+    cursor: not-allowed;
+}
