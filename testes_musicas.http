@@ -1,0 +1,106 @@
+@baseUrl = http://localhost:3000
+
+### ============================================
+### TESTES DA API DO KARAOKÊ — MÚLTIPLAS MÚSICAS
+### ============================================
+
+### --- 1. GET: Listar todas as músicas ---
+GET {{baseUrl}}/api/musicas
+
+### --- 2. GET: Buscar música por ID (existente) ---
+GET {{baseUrl}}/api/musicas/0
+
+### --- 3. GET: Buscar música por ID inexistente (espera 404) ---
+GET {{baseUrl}}/api/musicas/999
+
+### --- 4. POST: Criar nova música (deve receber id 1) ---
+POST {{baseUrl}}/api/musicas
+Content-Type: application/json
+
+{
+    "nome": "Smells Like Teen Spirit",
+    "artista": "Nirvana"
+}
+
+### --- 5. POST: Tentativa sem campos obrigatórios (espera 400) ---
+POST {{baseUrl}}/api/musicas
+Content-Type: application/json
+
+{
+    "nome": "Faltando artista"
+}
+
+### --- 6. PUT: Atualizar título e artista ---
+PUT {{baseUrl}}/api/musicas/0
+Content-Type: application/json
+
+{
+    "nome": "My Hero (Live)",
+    "artista": "Foo Fighters (Wembley 2008)"
+}
+
+### --- 7. PUT: Atualizar música inexistente (espera 404) ---
+PUT {{baseUrl}}/api/musicas/999
+Content-Type: application/json
+
+{
+    "nome": "Nao existe",
+    "artista": "Ninguem"
+}
+
+### --- 8. DELETE: Remover música (a criada no teste 4) ---
+DELETE {{baseUrl}}/api/musicas/1
+
+### --- 9. DELETE: Remover música inexistente (espera 404) ---
+DELETE {{baseUrl}}/api/musicas/999
+
+### --- 10. GET: Verificar estado final ---
+GET {{baseUrl}}/api/musicas
+
+### ============================================
+### TESTES DE AUTORIA — ROTA DE PARTES (PARTE 4.2)
+### ============================================
+
+### --- 11. POST: Adicionar parte válida a uma música existente (espera 201) ---
+POST {{baseUrl}}/api/musicas/0/partes
+Content-Type: application/json
+
+{
+    "letra": "There goes my hero \nHe's ordinary",
+    "tempoEspera": 4500,
+    "tag": "refrão final"
+}
+
+### --- 12. POST: Tentativa de adicionar parte com campos faltando (espera 400) ---
+POST {{baseUrl}}/api/musicas/0/partes
+Content-Type: application/json
+
+{
+    "letra": "Estrofe sem tempo e sem tag"
+}
+
+### --- 13. POST: Tentativa de adicionar parte a uma música inexistente (espera 404) ---
+POST {{baseUrl}}/api/musicas/999/partes
+Content-Type: application/json
+
+{
+    "letra": "Letra de música fantasma",
+    "tempoEspera": 3000,
+    "tag": "intro"
+}
+
+### ============================================
+### TESTES ADICIONAIS — DESAFIOS E MIDDLEWARES
+### ============================================
+
+### --- 14. GET: Buscar música aleatória (Desafio Extra 7.7) ---
+GET {{baseUrl}}/api/musicas/aleatoria
+
+### --- 15. POST: Teste com JSON mal-formado para verificar middleware de erro (espera 400) ---
+POST {{baseUrl}}/api/musicas
+Content-Type: application/json
+
+{
+    "nome": "Invalido"
+    "artista": "JSON sem virgula"
+}

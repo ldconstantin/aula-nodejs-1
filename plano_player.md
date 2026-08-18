@@ -64,3 +64,21 @@ O paradigma assíncrono é fundamental no player em dois momentos essenciais:
 
 - **Nas requisições HTTP (`fetch`)**: O navegador não pode congelar a interface enquanto aguarda a resposta da rede ao solicitar as músicas ao servidor. O uso de `async/await` com a Fetch API permite esperar a resposta e a conversão do corpo JSON de forma limpa e não-bloqueante.
 - **Na sincronização do tempo de cada estrofe (`sleep`)**: Para simular o ritmo do karaokê, a execução precisa pausar entre uma estrofe e outra respeitando a duração estipulada em cada parte. Uma Promise com `setTimeout` associada a `await` pausa a função de reprodução sem travar a renderização nem a interatividade da página web.
+
+---
+
+## 5. O Que Foi Diferente (Comparativo Pós-Implementação — Parte 6.2)
+
+Após a conclusão da implementação e dos testes práticos no navegador, identificamos as seguintes diferenças e aprendizados entre o plano inicial e a realidade do desenvolvimento:
+
+1. **Controle de Interrupção e Concorrência (Botão ⏹ Parar):**  
+   No planejamento inicial, havíamos considerado apenas desabilitar o botão "▶ Tocar" durante a execução. No entanto, na prática percebemos que o usuário poderia querer parar a reprodução no meio ou trocar de música enquanto uma estrofe longa estava sendo exibida. Para viabilizar o desafio extra do botão **"⏹ Parar"**, foi necessário introduzir uma variável de estado `let tocando = false;` e checar `if (!tocando) break;` a cada iteração do laço `for`, além de desabilitar o botão Parar quando inativo.
+
+2. **Destaque Visual e Associação por Atributo de Dados (`data-id`):**  
+   No plano inicial, tínhamos pensado apenas em preencher o texto do item da lista. Durante a construção da interface, notamos que era necessário guardar o ID da música em cada elemento `<li>` (usando `item.dataset.id = musica.id`) para permitir alternar dinamicamente a classe CSS `.ativo`, destacando visualmente qual música da playlist está selecionada no momento.
+
+3. **Inclusão da Rota e Botão de Sorteio (🔀 Aleatória):**  
+   Não havíamos previsto no plano original a existência de uma rota `/api/musicas/aleatoria` nem o botão correspondente no cabeçalho da playlist. A adição dessa funcionalidade exigiu atenção especial na ordem de registro das rotas no Express (declarando `/aleatoria` antes de `/:id`) e encadeamento no frontend de `sortearAleatoria()` com `escolherMusica(id)`.
+
+4. **Tratamento de Quebras de Linha e Estados Vazios:**  
+   No plano, assumimos que a letra seria exibida diretamente sem preocupações com formatação. Na prática, as letras possuem quebras de linha (`\n`) que exigem a propriedade CSS `white-space: pre-line` e o uso rigoroso de `textContent` (em vez de `innerHTML`) para preservar a formatação original sem risco de injeção de código ou falhas visuais.

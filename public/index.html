@@ -13,7 +13,10 @@
 
     <main>
         <aside id="playlist">
-            <h2>Músicas</h2>
+            <div class="playlist-header">
+                <h2>Músicas</h2>
+                <button id="btnAleatoria" title="Sortear e tocar música aleatória">🔀 Aleatória</button>
+            </div>
             <ul id="listaMusicas"></ul>
         </aside>
 
@@ -23,7 +26,10 @@
             <p id="tag"></p>
             <p id="letra"></p>
             <p id="contador"></p>
-            <button id="btnTocar" disabled>▶ Tocar</button>
+            <div class="controles">
+                <button id="btnTocar" disabled>▶ Tocar</button>
+                <button id="btnParar" disabled>⏹ Parar</button>
+            </div>
         </section>
     </main>
 

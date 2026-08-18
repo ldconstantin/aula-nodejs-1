@@ -25,18 +25,46 @@ main {
 }
 
 #playlist {
-    width: 280px;
+    width: 320px;
     background: #1e1e1e;
     border-radius: 12px;
     padding: 16px;
 }
 
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
 #playlist h2 {
     font-size: 1rem;
     color: #1db954;
-    margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+#btnAleatoria {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    border: 1px solid #1db954;
+    border-radius: 16px;
+    background: transparent;
+    color: #1db954;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#btnAleatoria:hover {
+    background: #1db954;
+    color: #000;
+}
+
+#playlist ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 #playlist li {
@@ -44,10 +72,20 @@ main {
     padding: 10px 12px;
     border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border-left: 3px solid transparent;
 }
 
 #playlist li:hover {
     background: #1db95433;
+}
+
+/* Desafio Extra: Destaque na playlist */
+#playlist li.ativo {
+    background: #1db95444;
+    border-left: 3px solid #1db954;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 #palco {
@@ -56,11 +94,16 @@ main {
     padding: 40px 20px;
     background: #1e1e1e;
     border-radius: 12px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #artista {
     color: #aaa;
     margin-top: 4px;
+    font-size: 1.1rem;
 }
 
 #tag {
@@ -68,7 +111,8 @@ main {
     color: #1db954;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    min-height: 1.4rem;
 }
 
 #letra {
@@ -77,25 +121,61 @@ main {
     min-height: 4.5rem;
     /* as letras vêm com \n — pre-line transforma em quebra de linha real */
     white-space: pre-line;
+    line-height: 1.5;
 }
 
 #contador {
     color: #888;
     margin-bottom: 20px;
+    min-height: 1.4rem;
+    font-size: 0.95rem;
 }
 
-#btnTocar {
+.controles {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+#btnTocar, #btnParar {
     font-size: 1.2rem;
     padding: 12px 32px;
     border: none;
     border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#btnTocar {
     background: #1db954;
     color: #000;
-    cursor: pointer;
+    font-weight: bold;
 }
 
 #btnTocar:disabled {
     background: #555;
     color: #999;
     cursor: not-allowed;
+}
+
+/* Desafio Extra: Botão Parar */
+#btnParar {
+    background: #e53935;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#btnParar:disabled {
+    background: #444;
+    color: #777;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    #playlist {
+        width: 100%;
+    }
 }
