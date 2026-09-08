@@ -1,0 +1,26 @@
+{
+    "titulo": "Cai, Cai, Balão",
+    "artista": "Cantiga Popular Brasileira",
+    "partes": [
+        {
+            "texto": "Cai, cai, balão \nCai, cai, balão",
+            "tempo": 3000,
+            "tipo": "refrão1"
+        },
+        {
+            "texto": "Aqui na minha mão \nNão vou lá, não vou lá, não vou lá",
+            "tempo": 3000,
+            "tipo": "verso1"
+        },
+        {
+            "texto": "Tenho medo de apanhar \nCai, cai, balão",
+            "tempo": 3000,
+            "tipo": "verso2"
+        },
+        {
+            "texto": "Cai, cai, balão \nAqui na minha mão",
+            "tempo": 3000,
+            "tipo": "refrão2"
+        }
+    ]
+}

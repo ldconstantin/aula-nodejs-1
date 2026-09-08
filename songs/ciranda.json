@@ -1,0 +1,36 @@
+{
+    "titulo": "Ciranda, Cirandinha",
+    "artista": "Cantiga de Roda",
+    "partes": [
+        {
+            "texto": "Ciranda, cirandinha \nVamos todos cirandar",
+            "tempo": 3000,
+            "tipo": "verso1"
+        },
+        {
+            "texto": "Vamos dar a meia-volta \nVolta e meia vamos dar",
+            "tempo": 3000,
+            "tipo": "verso2"
+        },
+        {
+            "texto": "O anel que tu me deste \nEra vidro e se quebrou",
+            "tempo": 3000,
+            "tipo": "verso3"
+        },
+        {
+            "texto": "O amor que tu me tinhas \nEra pouco e se acabou",
+            "tempo": 3000,
+            "tipo": "verso4"
+        },
+        {
+            "texto": "Por isso, dona Rosa \nEntre dentro desta roda",
+            "tempo": 3000,
+            "tipo": "verso5"
+        },
+        {
+            "texto": "Diga um verso bem bonito \nDiga adeus e vá-se embora",
+            "tempo": 3000,
+            "tipo": "final"
+        }
+    ]
+}

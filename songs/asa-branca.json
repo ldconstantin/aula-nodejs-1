@@ -1,0 +1,36 @@
+{
+    "titulo": "Asa Branca",
+    "artista": "Luiz Gonzaga",
+    "partes": [
+        {
+            "texto": "Quando olhei a terra ardendo \nQual fogueira de São João",
+            "tempo": 4000,
+            "tipo": "verso1"
+        },
+        {
+            "texto": "Eu perguntei a Deus do céu, ai \nPor que tamanha judiação",
+            "tempo": 4000,
+            "tipo": "verso2"
+        },
+        {
+            "texto": "Que braseiro, que fornalha \nNenhum pé de plantação",
+            "tempo": 4000,
+            "tipo": "verso3"
+        },
+        {
+            "texto": "Por falta de água perdi meu gado \nMorreu de sede meu alazão",
+            "tempo": 4000,
+            "tipo": "verso4"
+        },
+        {
+            "texto": "Até mesmo a asa branca \nBateu asas do sertão",
+            "tempo": 4000,
+            "tipo": "refrão1"
+        },
+        {
+            "texto": "Então eu disse: adeus Rosinha \nGuarda contigo meu coração",
+            "tempo": 4000,
+            "tipo": "refrão2"
+        }
+    ]
+}

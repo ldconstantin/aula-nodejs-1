@@ -1,0 +1,51 @@
+{
+  "titulo": "My Hero",
+  "artista": "Foo Fighters",
+  "partes": [
+    {
+      "texto": "Too alarmin now to talk about \n Take your pictures down and shake it out",
+      "tempo": 4000,
+      "tipo": "verso1"
+    },
+    {
+        "texto": "Truth or consequence, say it aloud \n Use that evidence, race it around",
+        "tempo": 4000,
+        "tipo": "verso2"
+    },
+    {
+        "texto": "There goes my hero",
+        "tempo": 5000,
+        "tipo": "refrão1"
+    },
+    {
+        "texto": "Watch him as he goes",
+        "tempo": 3000,
+        "tipo": "refrão2"
+    },
+    {
+        "texto": "He's ordinary",
+        "tempo": 3000,
+        "tipo": "refrão3"
+    },
+    {
+        "texto": "Don't the best of them bleed it out",
+        "tempo": 4000,
+        "tipo": "verso3"
+    },
+    {
+        "texto": "While the rest of them peter out?",
+        "tempo": 4000,
+        "tipo": "verso4"
+    },
+    {
+        "texto": "Kudos, my hero \nLeavin all the best",
+        "tempo": 4000,
+        "tipo": "verso5"
+    },
+    {
+        "texto": "You know my hero \nThe one thats on",
+        "tempo": 4000,
+        "tipo": "verso6"
+    }
+  ]
+}

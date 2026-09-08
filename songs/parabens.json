@@ -1,0 +1,31 @@
+{
+  "titulo": "Parabéns pra Você",
+  "artista": "Domínio Público",
+  "partes": [
+    {
+      "texto": "Parabéns pra você \nNesta data querida",
+      "tempo": 3000,
+      "tipo": "verso1"
+    },
+    {
+      "texto": "Muitas felicidades \nMuitos anos de vida",
+      "tempo": 3000,
+      "tipo": "verso2"
+    },
+    {
+      "texto": "É pique, é pique, é pique, é pique, é pique!",
+      "tempo": 2000,
+      "tipo": "grito1"
+    },
+    {
+      "texto": "É hora, é hora, é hora, é hora, é hora!",
+      "tempo": 2000,
+      "tipo": "grito2"
+    },
+    {
+      "texto": "Rá-tim-bum! 🎂",
+      "tempo": 2000,
+      "tipo": "final"
+    }
+  ]
+}
